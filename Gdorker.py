@@ -1114,8 +1114,8 @@ def core(url, UA, proxy_list, cookies):
             print("URL :", search_url, f"\n")
             response = requests.get(search_url, headers={'User-Agent': _UA}, cookies=cookies, verify=True)
             soup = BeautifulSoup(response.text, 'html.parser')
-            for link in soup.find_all('<a', href=True):
-                url = link.get('href=')
+            for link in soup.find_all('a', href=True):
+                url = link.get('href')
                 if url.startswith('/url?q='):
                     urls.append(url.split('/url?q=')[1].split('&')[0])
                     add = 0
