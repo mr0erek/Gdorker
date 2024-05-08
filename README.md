@@ -1,10 +1,10 @@
-<h2 align="center"> Gdocker </h2>
+<h2 align="center"> Gdorker </h2>
 
 **Overview:**
 A simple Python based CLI tool for google dorking!
 
 **Features:**
-- Added Automation for updated proxies, thanks to [TheSpeedX]("https://github.com/TheSpeedX") 
+- Added Automation for updated proxies, thanks to [TheSpeedX]('https://github.com/TheSpeedX') 
 - Added Cache proxy method, time interval = 1day
 - Added By default cookies, to avoid barriers while searching!
 - Added List of default "Google Dorking" queries, up to 70+
@@ -65,12 +65,12 @@ python Gdorker.py
 _OR_
 
 ```shell
-python3 Gdoker.py
+python3 Gdorker.py
 ````
 
 **Examples:**
 ```
-python Gdocker.py --site xyzwebsite.xyz
+python Gdorker.py --site xyzwebsite.xyz
 ```
 **Future Improvements:**
 
