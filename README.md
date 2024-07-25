@@ -68,9 +68,25 @@ _OR_
 python3 Gdorker.py
 ````
 
-**Examples:**
+**Examples: Default**
 ```
-python Gdorker.py --site xyzwebsite.xyz
+python Gdorker.py
+```
+**More, Try Help**
+`python Gdorker.py -h` or `--help`
+```
+usage: Gdorker.py [-h] [-s SEARCH] [-d [DORK]] [-e ENGINE] [-p PAGES] [-P PROCESSES] [-sl SITELIST]                             
+                                                                                                                                      
+Google Dorking Tool                                                                                                                   
+                                                                                                                                      
+options:                                                                                                                              
+  -h, --help                         : Show this help message and exit                                                                               
+  -s SEARCH, --search SEARCH         : Site/Query to search                                                                                          
+  -d [DORK], --dork [DORK]           : To Enable Dork Search, -d <files> for coustom Dorking.                                                        
+  -e ENGINE, --engine ENGINE         : Choose your search Google/Bing                                                                                
+  -p PAGES, --pages PAGES            : Specify the Number of Pages (Default: 1)                                                                      
+  -P PROCESSES, --process PROCESSES  : Specify the Number of Processes (Default: 2)                                                                  
+  -sl SITELIST, --site-list SITELIST : Add your Site list file
 ```
 **Future Improvements:**
 
