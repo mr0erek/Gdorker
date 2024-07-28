@@ -9,7 +9,12 @@ A simple Python based CLI tool for google dorking!
 - Added By default cookies, to avoid barriers while searching!
 - Added List of default "Google Dorking" queries, up to 70+
 - Added List of "User Agents" 890+
-- It's in BETA Version, Use at your Own risk : Still Upgrading...
+> [!WARNING]
+> Use at your Own risk : Still Upgrading...
+
+>[!NOTE]
+>I'm `mr0erek` is not responsible for any damages caused by this tool,
+>The User who is using the tool will be resposible for any damages caused by this tool.
 
 ### Technologies and Libraries Used
 
