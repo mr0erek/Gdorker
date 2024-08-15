@@ -4,11 +4,11 @@
 A simple Python based CLI tool for google dorking!
 
 **Features:**
-- Added Automation for updated proxies, thanks to [TheSpeedX]('https://github.com/TheSpeedX') 
+- ~Added Automation for updated proxies, thanks to [TheSpeedX](https://github.com/TheSpeedX)~
 - Added Cache proxy method, time interval = 1day
 - Added By default cookies, to avoid barriers while searching!
 - Added List of default "Google Dorking" queries, up to 70+
-- Added List of "User Agents" 890+
+- ~Added List of "User Agents" 890+~
 > [!WARNING]
 > Use at your Own risk : Still Upgrading...
 
