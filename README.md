@@ -189,7 +189,7 @@ When Google/Bing serve a challenge page:
 ## Attribution
 
 - Original engine + proxy cache: [mr0erek/Gdorker](https://github.com/mr0erek/Gdorker), proxies via [TheSpeedX/PROXY-List](https://github.com/TheSpeedX/PROXY-List)
-- H4 dork catalog inspired by [H4cksploit/google-dorking](https://github.com/H4cksploit/google-dorking); vuln scanner inspired by [loxs123](https://github.com/losts123) / loxs LLC.
+- H4 dork catalog inspired by [viralmaniar/bigbountyrecon](https://github.com/viralmaniar/bigbountyrecon); vuln scanner inspired by [coffinxp/loxs](https://github.com/coffinxp/loxs) / loxs LLC.
 
 > [!NOTE]
 > Still upgrading. Some Google/Bing anti-bot behavior changes without notice; `-e duckduckgo` or a local SearXNG (`--searx-host`) is the most reliable fallback.
