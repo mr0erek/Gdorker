@@ -33,13 +33,13 @@ pip install requests beautifulsoup4
 
 ```powershell
 # PowerShell / cmd — safe forms (note the escapes)
-python Gdorker_v2.1.4.py -s 'site:greentribunal.gov.in & \"Aadhar no.\"' -d-
-python Gdorker_v2.1.4.py -s "site:greentribunal.gov.in & 'Aadhar no.'" -d-
+python Gdorker_v3.py -s 'site:<domain/host> & \"<special_query>\"' -d-
+python Gdorker_v3.py -s "site:<domain/host> & '<special_query>''" -d-
 ```
 
 ```bash
 # bash / zsh / Linux — safe form
-python Gdorker_v2.1.4.py -s 'site:greentribunal.gov.in & "Aadhar no."' -d-
+python Gdorker_v3.py -s 'site:<domain/host> & "<special_query>"' -d-
 ```
 
 > If a query has no spaces you can pass it raw (no quotes): `-s site:example.com`.
@@ -53,68 +53,68 @@ python Gdorker_v2.1.4.py -s 'site:greentribunal.gov.in & "Aadhar no."' -d-
 Best anti-block ladder: `--adsbot` (AdsBot UA), `--cffi` (TLS impersonation), regional frontend rotation + basic-HTML (`gbv=1`) + no-cache headers already on by default.
 
 ```bash
-python Gdorker_v2.1.4.py -s example.com -e google                  # direct
-python Gdorker_v2.1.4.py -s example.com -e google -d               # default dork list
-python Gdorker_v2.1.4.py -s example.com -e google --dorks h4       # h4 dork catalog
-python Gdorker_v2.1.4.py -s example.com -e google -p 3             # 3 pages
-python Gdorker_v2.1.4.py -s example.com -e google --adsbot         # AdsBot UA (JS-wall)
-python Gdorker_v2.1.4.py -s example.com -e google --cffi           # curl_cffi impersonation
-python Gdorker_v2.1.4.py -s example.com -e google --proxy on       # proxy rotation
-python Gdorker_v2.1.4.py -s example.com -e google --web            # live dashboard
+python Gdorker_v3.py -s example.com -e google                  # direct
+python Gdorker_v3.py -s example.com -e google -d               # default dork list
+python Gdorker_v3.py -s example.com -e google --dorks h4       # h4 dork catalog
+python Gdorker_v3.py -s example.com -e google -p 3             # 3 pages
+python Gdorker_v3.py -s example.com -e google --adsbot         # AdsBot UA (JS-wall)
+python Gdorker_v3.py -s example.com -e google --cffi           # curl_cffi impersonation
+python Gdorker_v3.py -s example.com -e google --proxy on       # proxy rotation
+python Gdorker_v3.py -s example.com -e google --web            # live dashboard
 ```
 
 #### Bing (`-e bing`)
 RSS-first (plain XML, least bot-fought); falls back to the HTML parser, then DuckDuckGo.
 
 ```bash
-python Gdorker_v2.1.4.py -s example.com -e bing                    # RSS feed
-python Gdorker_v2.1.4.py -s example.com -e bing -d                 # default dork list
-python Gdorker_v2.1.4.py -s example.com -e bing --dorks h4         # h4 dork catalog
-python Gdorker_v2.1.4.py -s example.com -e bing -p 5               # 5 pages
-python Gdorker_v2.1.4.py -s example.com -e bing --adsbot           # harder-HTML fallback
-python Gdorker_v2.1.4.py -s example.com -e bing --proxy proxies.txt
-python Gdorker_v2.1.4.py -s example.com -e bing --auto-recon       # headless run
+python Gdorker_v3.py -s example.com -e bing                    # RSS feed
+python Gdorker_v3.py -s example.com -e bing -d                 # default dork list
+python Gdorker_v3.py -s example.com -e bing --dorks h4         # h4 dork catalog
+python Gdorker_v3.py -s example.com -e bing -p 5               # 5 pages
+python Gdorker_v3.py -s example.com -e bing --adsbot           # harder-HTML fallback
+python Gdorker_v3.py -s example.com -e bing --proxy proxies.txt
+python Gdorker_v3.py -s example.com -e bing --auto-recon       # headless run
 ```
 
 #### DuckDuckGo (`-e duckduckgo`)
 Most bot-tolerant; good default for scraping-scale runs.
 
 ```bash
-python Gdorker_v2.1.4.py -s example.com -e duckduckgo              # direct
-python Gdorker_v2.1.4.py -s example.com -e duckduckgo -D all       # all dorks
-python Gdorker_v2.1.4.py -s example.com -e duckduckgo -d my_dorks.txt
-python Gdorker_v2.1.4.py -s example.com -e duckduckgo --json-out out/results.json
-python Gdorker_v2.1.4.py -sl sites.txt -e duckduckgo --auto-recon --resume-file st.jsonl
+python Gdorker_v3.py -s example.com -e duckduckgo              # direct
+python Gdorker_v3.py -s example.com -e duckduckgo -D all       # all dorks
+python Gdorker_v3.py -s example.com -e duckduckgo -d my_dorks.txt
+python Gdorker_v3.py -s example.com -e duckduckgo --json-out out/results.json
+python Gdorker_v3.py -sl sites.txt -e duckduckgo --auto-recon --resume-file st.jsonl
 ```
 
 #### SearXNG (`-e searxng`)
 Self-hosted meta-engine. Needs `--searx-host` (prompts interactively if omitted).
 
 ```bash
-python Gdorker_v2.1.4.py -s example.com -e searxng --searx-host http://localhost:8080
-python Gdorker_v2.1.4.py -s example.com -e searxng --searx-host http://localhost:8080 -d
-python Gdorker_v2.1.4.py -s example.com -e searxng --searx-host http://localhost:8080 --dorks all
-python Gdorker_v2.1.4.py -s example.com -e searxng --searx-host http://localhost:8080 --searx-engines google,bing
-python Gdorker_v2.1.4.py -s example.com -e searxng --searx-host http://localhost:8080 --searx-categories general
-python Gdorker_v2.1.4.py -sl sites.txt -e searxng --searx-host http://localhost:8080 --auto-recon
+python Gdorker_v3.py -s example.com -e searxng --searx-host http://localhost:8080
+python Gdorker_v3.py -s example.com -e searxng --searx-host http://localhost:8080 -d
+python Gdorker_v3.py -s example.com -e searxng --searx-host http://localhost:8080 --dorks all
+python Gdorker_v3.py -s example.com -e searxng --searx-host http://localhost:8080 --searx-engines google,bing
+python Gdorker_v3.py -s example.com -e searxng --searx-host http://localhost:8080 --searx-categories general
+python Gdorker_v3.py -sl sites.txt -e searxng --searx-host http://localhost:8080 --auto-recon
 ```
 
 #### YaCy (`-e yacy`)
 Self-hosted P2P engine. Needs `--yacy-host` (prompts interactively if omitted).
 
 ```bash
-python Gdorker_v2.1.4.py -s example.com -e yacy --yacy-host http://localhost:8090
-python Gdorker_v2.1.4.py -s example.com -e yacy --yacy-host http://localhost:8090 -d
-python Gdorker_v2.1.4.py -s example.com -e yacy --yacy-host http://localhost:8090 --dorks h4
-python Gdorker_v2.1.4.py -s example.com -e yacy --yacy-host http://localhost:8090 -p 3
-python Gdorker_v2.1.4.py -s example.com -e yacy --yacy-host http://localhost:8090 --web
+python Gdorker_v3.py -s example.com -e yacy --yacy-host http://localhost:8090
+python Gdorker_v3.py -s example.com -e yacy --yacy-host http://localhost:8090 -d
+python Gdorker_v3.py -s example.com -e yacy --yacy-host http://localhost:8090 --dorks h4
+python Gdorker_v3.py -s example.com -e yacy --yacy-host http://localhost:8090 -p 3
+python Gdorker_v3.py -s example.com -e yacy --yacy-host http://localhost:8090 --web
 ```
 
 ### Common variations (any engine)
 
 | Variation | Command |
 |---|---|
-| Direct raw query (no dorks) | `python Gdorker_v2.1.4.py -s 'site:example.com & "Aadhar no."' -e bing -d-` |
+| Direct raw query (no dorks) | `python Gdorker_v3.py -s 'site:example.com & "<special_string>"' -e bing -d-` |
 | Default dork list | `... -d` |
 | Custom dork file | `... -d my_dorks.txt` |
 | H4 dork catalog | `... --dorks h4` |
@@ -140,7 +140,7 @@ python Gdorker_v2.1.4.py -s example.com -e yacy --yacy-host http://localhost:809
 ### Auto-recon (all engines)
 
 ```bash
-python Gdorker_v2.1.4.py -sl domains.txt --auto-recon -e bing \
+python Gdorker_v3.py -sl domains.txt --auto-recon -e bing \
     --dorks h4 --json-out out/recon.jsonl --csv-out out/recon.csv \
     --resume-file out/recon.state -o out/recon.log --web
 ```
@@ -153,11 +153,11 @@ python Gdorker_v2.1.4.py -sl domains.txt --auto-recon -e bing \
 
 ```bash
 # scan the URLs gathered this run
-python Gdorker_v2.1.4.py -s example.com -e bing --check lfi,sqli,xss,crlf,openredirect
+python Gdorker_v3.py -s example.com -e bing --check lfi,sqli,xss,crlf,openredirect
 # scan URLs from a file
-python Gdorker_v2.1.4.py --check urls.txt --threads 8
+python Gdorker_v3.py --check urls.txt --threads 8
 # custom payload file + custom success regex + html report
-python Gdorker_v2.1.4.py --check lfi --payloads payloads.json --match 'root:' --html-report out.html
+python Gdorker_v3.py --check lfi --payloads payloads.json --match 'root:' --html-report out.html
 ```
 
 Vulnerable URLs are saved to a timestamped `vulns-<ts>.txt`.
@@ -165,17 +165,17 @@ Vulnerable URLs are saved to a timestamped `vulns-<ts>.txt`.
 ### H4 external recon links
 
 ```bash
-python Gdorker_v2.1.4.py -s example.com --open-external       # opens each tool in browser
-python Gdorker_v2.1.4.py -s example.com --external-file links.txt   # just write the links
+python Gdorker_v3.py -s example.com --open-external       # opens each tool in browser
+python Gdorker_v3.py -s example.com --external-file links.txt   # just write the links
 ```
 
 ### Adversarial queries (spaces, `&`, quotes)
 
 ```bash
 # Linux
-python Gdorker_v2.1.4.py -s 'site:greentribunal.gov.in & "Aadhar no."' -e bing -d-
+python Gdorker_v3.py -s 'site:<domain/host> & "<special_query>"' -e bing -d-
 # Windows PowerShell / cmd
-python Gdorker_v2.1.4.py -s 'site:greentribunal.gov.in & \"Aadhar no.\"' -e bing -d-
+python Gdorker_v3.py -s 'site:<domain/host> & \"<special_query>\"' -e bing -d-
 ```
 
 ## CAPTCHA-free manual flow (PC + Termux)
